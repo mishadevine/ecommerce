@@ -1,0 +1,79 @@
+body {
+    background-color: #d46ce7;
+}
+
+/************************* Header **************************/
+.header {
+  background-color: #e9f259;
+}
+.logo {
+  width: 350px;
+  height: auto;
+}
+.nav {
+  float: right;
+  font-size: 15px;
+  margin-right: 50px;
+  margin-top: 20px;
+}
+.nav ul li {
+  display: inline-block;
+  margin: 10px;
+  padding: 20px;
+  background-color: #89aee1;
+  border-radius: 5px;
+}
+.nav ul li:hover {
+  background-color: #d46ce7;
+  color: #e9f259;
+}
+.nav ul li a {
+  color: black;
+}
+.nav ul li a:hover {
+  text-decoration: none;
+  color: #e9f259;
+}
+
+/************************* Main Page **************************/
+
+                /*********** store ***********/
+.page-logo {
+  width: 44%;
+  margin: auto;
+  padding: 20px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+.store-items {
+  background-color: red;
+  text-align: center;
+}
+                      /***** games *****/
+.games {
+  margin-bottom: 70px;
+  margin-left: 130px;
+  float: left;
+
+}
+.games img {
+  margin-left: 20px;
+}
+.nin-games, .playstation {
+  width: 300px;
+  height: 200px;
+}
+.wiiGames {
+  width: 200px;
+  height: 200px;
+}
+                      /***** cds *****/
+.cds img {
+  width: 200px;
+  height: 200px;
+  margin-left: 100px;
+}
+/*.BowWowCD {
+  width: 200px;
+  height: 200px;
+}*/
