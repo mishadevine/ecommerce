@@ -1,12 +1,16 @@
+<!-- <pre>
+  {{  cdItems[0].artist }}
+  {{  gameItems[0].details }}
+</pre> -->
 <div class="wrapper">
 
   <div class="header">
     <a href="/#/"><img class="logo" src="assets/img/logo_v1.png"></a>
     <div class="nav">
       <ul>
-        <li><a href="/#/">HOME</a></li>
-        <li><a href="/#/store">STORE</a></li>
+        <li><a href="/#/">STORE</a></li>
         <li><a href="/#/cart">VIEW CART</a></li>
+        <li><a href="/#/checkout">CHECKOUT</a></li>
       </ul>
     </div>
   </div>
@@ -18,31 +22,67 @@
   <div class="store-items">
     <div class="games">
       <img class="nin-games" src="assets/img/11-games_44.jpg">
-        <div>
-          <span><h2>11 Games $44</h2></span>
+      <button class="btn btn-default add" id="game0">ADD TO CART</button>
+        <div class="gameInfo">
+          <span><p class="title">{{gameItems[0].title}}</p></span>
+          <span><p class="deets">{{gameItems[0].details}}</p></span>
+          <span><p class="price">{{gameItems[0].price}}</p></span>
         </div>
     </div>
 
     <div class="games">
       <img class="playstation" src="assets/img/playstationgames.jpg">
-      <div>
-        <span><h2>14 Games $56<h2></span>
+      <button class="btn btn-default add" id="game1">ADD TO CART</button>
+      <div class="gameInfo">
+        <span><p class="title">{{gameItems[1].title}}</p></span>
+        <span><p class="deets">{{gameItems[1].details}}</p></span>
+        <span><p class="price">{{gameItems[1].price}}</p></span>
       </div>
     </div>
 
     <div class="games">
       <img class="wiiGames" src="assets/img/mario-kartwii.jpg">
-      <div>
-        <span><h2>$5<h2></span>
+      <button class="btn btn-default add" id="game2">ADD TO CART</button>
+      <div class="gameInfo">
+        <span><p class="title">{{gameItems[2].title}}</p></span>
+        <span><p class="deets">{{gameItems[2].details}}</p></span>
+        <span><p class="price">{{gameItems[2].price}}</p></span>
       </div>
     </div>
 
-  </div>
-    <!-- <div class="cds">
+    <div class="cds">
       <img src="assets/img/BowWowCD.png">
+      <button class="btn btn-default add" id="cd0">ADD TO CART</button>
+      <div class="cdInfo">
+        <span><p class="title">{{cdItems[0].title}}</p></span>
+        <span><p class="artist">{{cdItems[0].artist}}</p></span>
+        <span><p class="price">{{cdItems[0].price}}</p></span>
+      </div>
+    </div>
+
+    <div class="cds">
       <img src="assets/img/faithhillcd.png">
+      <button class="btn btn-default add" id="cd1">ADD TO CART</button>
+      <div class="cdInfo">
+        <span><p class="title">{{cdItems[1].title}}</p></span>
+        <span><p class="artist">{{cdItems[1].artist}}</p></span>
+        <span><p class="price">{{cdItems[1].price}}</p></span>
+      </div>
+    </div>
+
+    <div class="cds">
       <img src="assets/img/dc-cd.png">
-    </div> -->
+      <button class="btn btn-default add" id="cd2">ADD TO CART</button>
+      <div class="cdInfo">
+        <span><p class="title">{{cdItems[2].title}}</p></span>
+        <span><p class="artist">{{cdItems[2].artist}}</p></span>
+        <span><p class="price">{{cdItems[2].price}}</p></span>
+      </div>
+    </div>
+  </div>
+
+
+
   </div>
 
 </div>

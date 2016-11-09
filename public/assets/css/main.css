@@ -46,19 +46,41 @@ body {
   margin-bottom: 50px;
 }
 .store-items {
-  background-color: red;
   text-align: center;
+}
+.games button.add {
+  background-color: #89aee1;
+  border-color: #89aee1;
+  margin-top: 250px;
+  margin-left: -210px;
+}
+.games button.add:hover {
+  background-color: #9effb8;
 }
                       /***** games *****/
 .games {
   margin-bottom: 70px;
   margin-left: 130px;
   float: left;
-
+}
+.gameInfo {
+  margin-top: 30px;
+}
+.games p.title{
+  font-size: 21px;
+}
+.games p.deets{
+  font-size: 18px;
+}
+.games p.price{
+  font-size: 18px;
 }
 .games img {
-  margin-left: 20px;
+  margin-left: -100px;
 }
+/*.games button.Wii {
+  background-color: blue;
+}*/
 .nin-games, .playstation {
   width: 300px;
   height: 200px;
@@ -68,19 +90,53 @@ body {
   height: 200px;
 }
                       /***** cds *****/
+.cds {
+  float: left;
+  margin-bottom: 70px;
+  margin-left: 110px;
+}
 .cds img {
   width: 200px;
   height: 200px;
+  margin-left: 70px;
+}
+.cds button.add {
+  background-color: #89aee1;
+  border-color: #89aee1;
+  margin-top: 250px;
+  margin-left: -190px;
+}
+.cds button.add:hover {
+  background-color: #9effb8;
+}
+.cdInfo {
+  margin-top: 30px;
+}
+.cds span p{
   margin-left: 100px;
 }
-/*.BowWowCD {
-  width: 200px;
-  height: 200px;
-}*/
+.cds p.title{
+  font-size: 21px;
+}
+.cds p.artist{
+  font-size: 18px;
+}
+.cds p.price{
+  font-size: 18px;
+}
 
 
                 /*********** cart ***********/
 .cart-logo {
+  width: 37%;
+  margin: auto;
+  padding: 20px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+                /*********** checkout ***********/
+.checkout-logo {
   width: 37%;
   margin: auto;
   padding: 20px;
