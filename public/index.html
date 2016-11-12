@@ -1,21 +1,28 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <base href="/" />
     <title>Tatiana's Old Skool Store</title>
 
-    <!-- <script src="https://www.gstatic.com/firebasejs/3.5.3/firebase.js"></script>
-    <script>
-      // Initialize Firebase
-      var config = {
-        apiKey: "AIzaSyCog54WPstrB9z2c2bfFxRhEB1112GuFAQ",
-        authDomain: "tatianasoldskool.firebaseapp.com",
-        databaseURL: "https://tatianasoldskool.firebaseio.com",
-        storageBucket: "",
-        messagingSenderId: "777125319078"
-      };
-      firebase.initializeApp(config);
-      var database = firebase.database();
-    </script> -->
+
+<!-- <script src="https://www.gstatic.com/firebasejs/3.6.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyCog54WPstrB9z2c2bfFxRhEB1112GuFAQ",
+    authDomain: "tatianasoldskool.firebaseapp.com",
+    databaseURL: "https://tatianasoldskool.firebaseio.com",
+    storageBucket: "tatianasoldskool.appspot.com",
+    messagingSenderId: "777125319078"
+  };
+  firebase.initializeApp(config);
+</script>
+
+<script src="https://www.gstatic.com/firebasejs/3.5.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/3.5.2/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/3.5.2/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/3.5.2/firebase-messaging.js"></script> -->
+
 
     <!-- Bootstrap -->
     <link rel="stylesheet" type="text/css" href="bower/bootstrap/dist/css/bootstrap.css">
@@ -23,25 +30,31 @@
     <script type="text/javascript" src="bower/bootstrap/dist/js/bootstrap.js"></script>
 
     <!-- Angular -->
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+    <script src="bower/angular/angular.min.js"></script>
     <script src="bower/angular-route/angular-route.min.js"></script>
-    <script src="bower/angular-messages/angular-messages.min.js"></script>
+    <script src="bower/angularfire/dist/angularfire.min.js"></script>
 
-    <!-- AngularFire -->
-    <script src="https://cdn.firebase.com/libs/angularfire/1.1.3/angularfire.min.js"></script>
 
     <!-- Firebase -->
-    <script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
+    <script src="bower/firebase/firebase.js"></script>
+    <script src="bower/firebase/firebase-app.js"></script>
+    <script src="bower/firebase/firebase-auth.js"></script>
+    <script src="bower/firebase/firebase-database.js"></script>
+    <script src="bower/firebase/firebase-messaging.js"></script>
 
-    <!-- <script src="https://www.gstatic.com/firebasejs/3.5.2/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/3.5.2/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/3.5.2/firebase-database.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/3.5.2/firebase-messaging.js"></script> -->
 
+
+    <!-- JS Files -->
     <script type="text/javascript" src="assets/js/mainfirebase.js"></script>
+    <script type="text/javascript" src="assets/js/routes.js"></script>
 
-    <!-- Stylesheets -->
+
+    <!-- CSS Files -->
     <link rel="stylesheet" type="text/css" href="assets/css/main.css">
+
+    <!-- Controllers -->
+    <script type="text/javascript" src="assets/js/controllers/masterCtrl.js"></script>
+
 
   </head>
   <body ng-app="TatianasOldies" ng-controller="MasterCtrl">

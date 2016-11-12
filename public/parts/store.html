@@ -1,16 +1,12 @@
-<!-- <pre>
-  {{  cdItems[0].artist }}
-  {{  gameItems[0].details }}
-</pre> -->
 <div class="wrapper">
 
   <div class="header">
     <a href="/#/"><img class="logo" src="assets/img/logo_v1.png"></a>
     <div class="nav">
       <ul>
-        <li><a href="/#/">STORE</a></li>
-        <li><a href="/#/cart">VIEW CART</a></li>
-        <li><a href="/#/checkout">CHECKOUT</a></li>
+        <li><a href="/">STORE</a></li>
+        <li><a href="/cart">VIEW CART</a></li>
+        <li><a href="/checkout">CHECKOUT</a></li>
       </ul>
     </div>
   </div>
@@ -22,7 +18,7 @@
   <div class="store-items">
     <div class="games">
       <img class="nin-games" src="assets/img/11-games_44.jpg">
-      <button class="btn btn-default add" id="game0">ADD TO CART</button>
+      <button ng-click="signInUser()" class="btn btn-default add" id="game0">ADD TO CART</button>
         <div class="gameInfo">
           <span><p class="title">{{gameItems[0].title}}</p></span>
           <span><p class="deets">{{gameItems[0].details}}</p></span>
