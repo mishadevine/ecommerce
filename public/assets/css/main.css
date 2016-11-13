@@ -58,13 +58,15 @@ body {
   background-color: #9effb8;
 }
                       /***** games *****/
-.games {
+form {
   margin-bottom: 70px;
+}
+.games {
   margin-left: 130px;
   float: left;
 }
 .gameInfo {
-  margin-top: 30px;
+  margin-top: 30px
 }
 .games p.title{
   font-size: 21px;
@@ -76,11 +78,8 @@ body {
   font-size: 18px;
 }
 .games img {
-  margin-left: -100px;
+  /*margin-left: -10px;*/
 }
-/*.games button.Wii {
-  background-color: blue;
-}*/
 .nin-games, .playstation {
   width: 300px;
   height: 200px;

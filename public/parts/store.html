@@ -1,3 +1,7 @@
+<pre>
+  {{gameItems}}
+</pre>
+
 <div class="wrapper">
 
   <div class="header">
@@ -16,39 +20,41 @@
   </div>
 
   <div class="store-items">
-    <div class="games">
+    <form class="games" ng-click="signInUser()" id="games0">
       <img class="nin-games" src="assets/img/11-games_44.jpg">
-      <button ng-click="signInUser()" class="btn btn-default add" id="game0">ADD TO CART</button>
         <div class="gameInfo">
-          <span><p class="title">{{gameItems[0].title}}</p></span>
-          <span><p class="deets">{{gameItems[0].details}}</p></span>
-          <span><p class="price">{{gameItems[0].price}}</p></span>
+          <span><p name="title" class="title">{{gameItems[0].title}}</p></span>
+          <span><p name="deets" class="deets">{{gameItems[0].details}}</p></span>
+          <span><p name="price" class="price">{{gameItems[0].price}}</p></span>
         </div>
-    </div>
+        <button type="submit" class="btn btn-default addGame">ADD TO CART</button>
+    </form>
 
-    <div class="games">
+    <form class="games" ng-click="signInUser()" id="games1">
       <img class="playstation" src="assets/img/playstationgames.jpg">
-      <button class="btn btn-default add" id="game1">ADD TO CART</button>
+      <!-- <button class="btn btn-default add" id="game1">ADD TO CART</button> -->
       <div class="gameInfo">
         <span><p class="title">{{gameItems[1].title}}</p></span>
         <span><p class="deets">{{gameItems[1].details}}</p></span>
         <span><p class="price">{{gameItems[1].price}}</p></span>
       </div>
-    </div>
+      <button type="submit" class="btn btn-default addGame">ADD TO CART</button>
+    </form>
 
-    <div class="games">
+    <form class="games" ng-click="signInUser()" id="games2">
       <img class="wiiGames" src="assets/img/mario-kartwii.jpg">
-      <button class="btn btn-default add" id="game2">ADD TO CART</button>
+      <!-- <button class="btn btn-default add" id="game2">ADD TO CART</button> -->
       <div class="gameInfo">
         <span><p class="title">{{gameItems[2].title}}</p></span>
         <span><p class="deets">{{gameItems[2].details}}</p></span>
         <span><p class="price">{{gameItems[2].price}}</p></span>
       </div>
-    </div>
+      <button type="submit" class="btn btn-default addGame">ADD TO CART</button>
+    </form>
 
     <div class="cds">
       <img src="assets/img/BowWowCD.png">
-      <button class="btn btn-default add" id="cd0">ADD TO CART</button>
+      <!-- <button class="btn btn-default add" id="cd0">ADD TO CART</button> -->
       <div class="cdInfo">
         <span><p class="title">{{cdItems[0].title}}</p></span>
         <span><p class="artist">{{cdItems[0].artist}}</p></span>
@@ -58,7 +64,7 @@
 
     <div class="cds">
       <img src="assets/img/faithhillcd.png">
-      <button class="btn btn-default add" id="cd1">ADD TO CART</button>
+      <!-- <button class="btn btn-default add" id="cd1">ADD TO CART</button> -->
       <div class="cdInfo">
         <span><p class="title">{{cdItems[1].title}}</p></span>
         <span><p class="artist">{{cdItems[1].artist}}</p></span>
@@ -68,7 +74,7 @@
 
     <div class="cds">
       <img src="assets/img/dc-cd.png">
-      <button class="btn btn-default add" id="cd2">ADD TO CART</button>
+      <!-- <button class="btn btn-default add" id="cd2">ADD TO CART</button> -->
       <div class="cdInfo">
         <span><p class="title">{{cdItems[2].title}}</p></span>
         <span><p class="artist">{{cdItems[2].artist}}</p></span>
