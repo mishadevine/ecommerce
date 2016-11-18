@@ -58,7 +58,7 @@ body {
   background-color: #9effb8;
 }
                       /***** games *****/
-form {
+form.games {
   margin-bottom: 70px;
 }
 .games {
@@ -77,9 +77,6 @@ form {
 .games p.price{
   font-size: 18px;
 }
-.games img {
-  /*margin-left: -10px;*/
-}
 .nin-games, .playstation {
   width: 300px;
   height: 200px;
@@ -88,11 +85,14 @@ form {
   width: 200px;
   height: 200px;
 }
-                      /***** cds *****/
+
+                   /***** cds *****/
+form.cds {
+ margin-bottom: 70px;
+}
 .cds {
-  float: left;
-  margin-bottom: 70px;
-  margin-left: 110px;
+ margin-left: 60px;
+ float: left;
 }
 .cds img {
   width: 200px;
@@ -125,6 +125,7 @@ form {
 }
 
 
+
                 /*********** cart ***********/
 .cart-logo {
   width: 37%;
@@ -133,7 +134,40 @@ form {
   margin-top: 50px;
   margin-bottom: 50px;
 }
-
+.cartContainer {
+  background-color: #7cf4d3;
+  padding: 20px;
+  width: 70%;
+  margin: auto;
+  height: 400px;
+  margin-bottom: 100px;
+}
+.cartContainer form ul li {
+  list-style-type: none;
+}
+.removeLink {
+  margin-left: 700px;
+  margin-top: -30px;
+}
+.checkout {
+  margin-top: 100px;
+   width: 20%;
+   margin-left: 350px;
+}
+.cartPrice {
+  margin-left: 550px;
+  margin-top: -70px;
+}
+.cartContainer button {
+  background-color: #89aee1;
+  width: 20%;
+  margin-top: 100px;
+  margin-left: 390px;
+}
+.cartContainer button:hover {
+  background-color: #d46ce7;
+  color: #e9f259;
+}
                 /*********** checkout ***********/
 .checkout-logo {
   width: 37%;
@@ -141,4 +175,16 @@ form {
   padding: 20px;
   margin-top: 50px;
   margin-bottom: 50px;
+}
+
+.success {
+  text-align: center;
+}
+.checkoutContainer {
+  background-color: #7cf4d3;
+  padding: 20px;
+  width: 70%;
+  margin: auto;
+  height: 400px;
+  margin-bottom: 100px;
 }

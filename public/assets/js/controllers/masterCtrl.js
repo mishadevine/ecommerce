@@ -13,10 +13,6 @@ angular.module ("TatianasOldies")
     var gameItems = $firebaseArray(gameRef)
     $scope.gameItems = gameItems;
 
-    // var usersRef = ref.child('users') // calling the child element of users
-    // var users = $firebaseObject(usersRef)
-    // $scope.users = users;
-
     var items;
 
     $scope.signInUser = function () { // assigning an auth property
@@ -43,36 +39,14 @@ angular.module ("TatianasOldies")
           var users = $firebaseObject(usersRef)
           $scope.users = users; // calling the users database
 
-          // users.userInformation = { userID: user.uid, title: $scope.gameItems[0].title, details: $scope.gameItems[0].details, price: $scope.gameItems[0].price}
-          // users.$save().then(function(usersRef) {
-          //  console.log("user id saved into database as: " + user.uid);
-          // })
-
           users.userInformation = { userID: user.uid,title: $scope.gameItems[0].title, details: $scope.gameItems[0].details, price: $scope.gameItems[0].price }
           users.$save().then(function(usersRef) {
            console.log("user id saved into database as: " + user.uid);
          })
-         .then(function(usersRef) {
-           users.userInformation = { title: $scope.gameItems[1].title, details: $scope.gameItems[1].details, price: $scope.gameItems[1].price}
-           users.$save().then(function(usersRef) {
-            console.log("user id saved into database as: " + user.uid);
-           })
 
-         })
-
-          // var itemIndex = gameItems.$keyAt(gameItems[1])
-          // $scope.itemIndex = itemIndex;
-          // console.log(itemIndex);
-
-          // $scope.items.$add($scope.gameItems).then(function(ref) {
-          //   console.log("added item to users");
-          // });
         } else {
           console.log("user is signed out")
         }
       });  // end of onAuthStateChanged function
     } //end of signInUser function
-
-
-
   }) // end of controller

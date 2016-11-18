@@ -1,6 +1,8 @@
-<div class="wrapper">
+<script src="https://www.paypalobjects.com/api/checkout.js" data-version-4></script>
 
-  <div class="header">
+<div class="wrapper"><!-- beginning of wrapper -->
+
+  <div class="header"> <!-- beginning of header -->
     <a href="/#/"><img class="logo" src="assets/img/logo_v1.png"></a>
     <div class="nav">
       <ul>
@@ -9,18 +11,26 @@
         <li><a href="/checkout">CHECKOUT</a></li>
       </ul>
     </div>
-  </div>
+  </div> <!-- end of header -->
 
-  <div class="cart-logo">
+  <div class="cart-logo"> <!-- beginning of logo div -->
     <img src="assets/img/cart_logo.png">
-  </div>
+  </div> <!-- end of logo div -->
 
-  <div>
-     <h1> Welcome </h2>
+  <div class="cartContainer"> <!-- beginning of cartContainer -->
+    <form>
+      <ul>
+        <li ng-repeat="item in cartItems">
+          <div class="cartTitle"><h3>{{ item.title }}</h3></div>
+          <div class="cartDeets"><h3>{{ item.details }}</h3></div>
+          <div class="cartPrice"><h3>{{ item.price }}</h3></div>
+          <div class="removeLink">
+            <a class="two" href="" ng-click="removeEntry(item)">Remove From Cart</a>
+          </div>
+        </li>
+      </ul>
+      <button type="submit" ng-click="goToCheckout()" class="btn btn-lg toCheckout">Ready To Checkout</button>
+    </form>
+  </div> <!-- end of cartContainer -->
 
-       <pre>
-          {{ users }}
-       </pre>
-  </div>
-
-</div>
+</div> <!-- end of wrapper -->

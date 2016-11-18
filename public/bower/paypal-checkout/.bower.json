@@ -1,0 +1,15 @@
+{
+  "name": "paypal-checkout",
+  "homepage": "https://github.com/paypal/paypal-checkout",
+  "version": "4.0.25",
+  "_release": "4.0.25",
+  "_resolution": {
+    "type": "version",
+    "tag": "v4.0.25",
+    "commit": "a196ee9dc9682bc8a5e2d7a897a1abf0bf14088e"
+  },
+  "_source": "https://github.com/paypal/paypal-checkout.git",
+  "_target": "^4.0.25",
+  "_originalSource": "paypal-checkout",
+  "_direct": true
+}

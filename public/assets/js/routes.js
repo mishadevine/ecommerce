@@ -6,9 +6,12 @@ angular.module ("TatianasOldies")
       controller: "MasterCtrl",
     }).when("/cart", {
       templateUrl: "parts/cart.html",
-      controller: "MasterCtrl",
+      controller: "CartCtrl",
     }).when("/checkout", {
       templateUrl: "parts/checkout.html",
+      controller: "CheckoutCtrl",
+    }).when("/payment", {
+      templateUrl: "parts/paymentSuccess.html",
     })
     .otherwise({
       redirectTo: "/"
