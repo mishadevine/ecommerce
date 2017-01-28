@@ -11,8 +11,33 @@ angular.module ("TatianasOldies")
 
     var gameRef = ref.child('store-items/games') // calling the child element of store-items category of games
     var gameItems = $firebaseArray(gameRef)
-    $scope.gameItems = gameItems;
+    gameItems.$loaded()
+      .then(function(){
+        angular.forEach(gameItems, function(value, key) {
+          switch (value.id) {
+            case "game0":
+              value.image = 'assets/img/11-games_44.jpg';
+              break;
+            case "game1":
+              value.image = 'assets/img/playstationgames.jpg';
+              break;
+            case "game2":
+                value.image = 'assets/img/mario-kartwii.jpg';
+              break;
+            default:
 
+          }
+          console.log(gameItems);
+          return $scope.gameItems = gameItems;
+        });
+      })
+      .catch(function(error){
+        console.log('Error:',error);
+      });
+
+
+
+    console.log($scope);
     var items;
 
     $scope.signInUser = function () { // assigning an auth property
@@ -49,4 +74,15 @@ angular.module ("TatianasOldies")
         }
       });  // end of onAuthStateChanged function
     } //end of signInUser function
+
+
+
+    // Add cart item to database
+    $scope.addCartItem = function(item) {
+      console.log(item);
+
+    }
+
+
+
   }) // end of controller
