@@ -2,6 +2,18 @@
 
 
 angular.module('ngCart', ['ngCart.directives'])
+var ref = firebase.database().ref() // connect to database
+var store = ref.child('store-items')
+var stoItems = $firebaseArray(store)
+$scope.stoItems = stoItems;
+
+var cdRef = ref.child('store-items/cds') // calling the child element of store-items category of cds
+var cdItems = $firebaseArray(cdRef)
+$scope.cdItems = cdItems;
+
+var gameRef = ref.child('store-items/games') // calling the child element of store-items category of games
+var gameItems = $firebaseArray(gameRef)
+$scope.gameItems = gameItems;
 
     .config([function () {
 
@@ -27,7 +39,7 @@ angular.module('ngCart', ['ngCart.directives'])
 
     }])
 
-    .service('ngCart', ['$rootScope', 'ngCartItem', 'store', function ($rootScope, ngCartItem, store) {
+    .service('ngCart', ['$rootScope', 'ngCartItem', 'store', function ($rootScope, ngCartItem, store, $scope) {
 
         this.init = function(){
             this.$cart = {
@@ -134,6 +146,12 @@ angular.module('ngCart', ['ngCart.directives'])
 
         };
 
+        // $scope.removeItemById= function(id) {
+        //   $scope.items.$remove(item).then(function(ref) {
+        //     console.log("removed item");
+        //   });
+        // }
+
         this.removeItemById = function (id) {
             var cart = this.getCart();
             angular.forEach(cart.items, function (item, index) {
@@ -141,22 +159,25 @@ angular.module('ngCart', ['ngCart.directives'])
                     cart.items.splice(index, 1);
                 }
             });
+            scope.items.$remove(item).then(function(ref) {
+              console.log("removed item");
+            });
             this.setCart(cart);
             $rootScope.$broadcast('ngCart:itemRemoved', {});
             $rootScope.$broadcast('ngCart:change', {});
         };
 
         this.empty = function () {
-            
+
             $rootScope.$broadcast('ngCart:change', {});
             this.$cart.items = [];
             localStorage.removeItem('cart');
         };
-        
+
         this.isEmpty = function () {
-            
+
             return (this.$cart.items.length > 0 ? false : true);
-            
+
         };
 
         this.toObject = function() {

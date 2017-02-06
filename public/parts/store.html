@@ -17,18 +17,36 @@
 
 
     <div class="store-items">
+      <!-- Games -->
       <div ng-repeat="game in gameItems">
          <form class="games" ng-click="signInUser()" id="{{game.id}}">
            <img class="nin-games" ng-src="{{game.image}}">
              <div class="gameInfo">
-               <span><p name="title" class="title">{{game.title}}</p></span>
-               <span><p name="deets" class="deets">{{game.details}}</p></span>
-               <span><p name="price" class="price">{{game.price}}</p></span>
+               <span><p name="title" class="title" ng-model="title">{{game.title}}</p></span>
+               <span><p name="deets" class="deets" ng-model="details">{{game.details}}</p></span>
+               <span><p name="price" class="price" ng-model="price">${{game.price}}</p></span>
              </div>
              <!-- <button class="add" ng-click="addCartItem(game)">Add to Cart</button> -->
-             <ngcart-addtocart id="{{ game.id }}" name="{{ game.title }}" price="{{ game.price }}" quantity="1" quantity-max="1" data="game">Add To Cart</ngcart-addtocart>
+             <ngcart-addtocart id="{{ game.id }}" name="{{ game.title }}" price="{{ game.price }}" quantity="1" quantity-max="1">Add To Cart</ngcart-addtocart>
         </form>
       </div>
+
+      <!-- CDS -->
+      <div ng-repeat="cd in cdItems">
+         <form class="cds" ng-click="signInUser()" id="{{cd.id}}">
+           <img ng-src="{{cd.image}}">
+             <div class="cdInfo">
+               <span><p name="title" class="title">{{cd.title}}</p></span>
+               <span><p name="artist" class="artist">{{cd.artist}}</p></span>
+               <span><p name="price" class="price">${{cd.price}}</p></span>
+             </div>
+             <!-- <button class="add" ng-click="addCartItem(cd)">Add to Cart</button> -->
+             <ngcart-addtocart id="{{ cd.id }}" name="{{ cd.title }}" price="{{ cd.price }}" quantity="1" quantity-max="1">Add To Cart</ngcart-addtocart>
+
+        </form>
+      </div>
+
+    </div>
 
       <!--  TEMPALATES -->
 <!--  TEMPALATES -->
@@ -90,11 +108,8 @@
             <td><span ng-click="ngCart.removeItemById(item.getId())" class="glyphicon glyphicon-remove"></span></td>
 
             <td>{{ item.getName() }}</td>
-            <td><span class="glyphicon glyphicon-minus" ng-class="{'disabled':item.getQuantity()==1}"
-                      ng-click="item.setQuantity(-1, true)"></span>&nbsp;&nbsp;
-                {{ item.getQuantity() | number }}&nbsp;&nbsp;
-                <span class="glyphicon glyphicon-plus" ng-click="item.setQuantity(1, true)"></span></td>
-            <td>{{ item.getPrice() | currency}}</td>
+            <td>{{ item.getQuantity() | number }}</td>
+            <td>{{ item.getPrice() | currency }}</td>
             <td>{{ item.getTotal() | currency }}</td>
         </tr>
         </tbody>
@@ -123,48 +138,8 @@
 </div>
 </script>
 
-<!-- <script type="text/ng-template" id="template/ngCart/checkout.html">
-
-<div ng-if="service=='http' || service == 'log'">
-    <button class="btn btn-primary" ng-click="checkout()" ng-disabled="!ngCart.getTotalItems()" ng-transclude>Checkout</button>
-</div>
 
 
-<div ng-if="service=='paypal'">
 
-    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" ng-show="ngCart.getTotalItems()">
-        <input type="hidden" name="cmd" value="_xclick">
-        <input type="hidden" name="business" value="{{ settings.paypal.business }}">
-        <input type="hidden" name="lc" value="CA">
-        <input type="hidden" name="item_name" value="{{ settings.paypal.item_name }}">
-        <input type="hidden" name="item_number" value="{{ settings.paypal.item_number }}">
-        <input type="hidden" name="amount" value="{{ ngCart.getSubTotal()}}">
-        <input type="hidden" name="currency_code" value="{{ settings.paypal.currency_code }}">
-        <input type="hidden" name="button_subtype" value="services">
-        <input type="hidden" name="no_note" value="0">
-        <input type="hidden" name="tax_rate" value="{{ ngCart.getTaxRate()}}">
-        <input type="hidden" name="shipping" value="{{ ngCart.getShipping()}}">
-        <input type="hidden" name="bn" value="PP-BuyNowBF:btn_buynowCC_LG.gif:NonHostedGuest">
-        <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-        <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
-    </form>
-
-</div>
-
-</script> -->
-
-
-      <div ng-repeat="cd in cdItems">
-         <form class="cds" ng-click="signInUser()" id="{{cd.id}}">
-           <img ng-src="{{cd.image}}">
-             <div class="cdInfo">
-               <span><p name="title" class="title">{{cd.title}}</p></span>
-               <span><p name="artist" class="artist">{{cd.artist}}</p></span>
-               <span><p name="price" class="price">{{cd.price}}</p></span>
-             </div>
-             <button class="add" ng-click="addCartItem(cd)">Add to Cart</button>
-        </form>
-      </div>
-  </div>
 
 </div> <!-- end of wrapper -->

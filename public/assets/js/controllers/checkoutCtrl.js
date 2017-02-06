@@ -17,7 +17,7 @@ angular.module("TatianasOldies")
     // Add the props needed to your $scope
 
       // $scope.env = {
-      //   'production', // Optional: specify 'sandbox' environment
+      //   var test = "sandbox" // Optional: specify 'sandbox' environment
       // }
 
       $scope.client = {
@@ -32,7 +32,7 @@ angular.module("TatianasOldies")
             transactions: [
                 {
                     amount: {
-                        total:  '0.02', //$scope.price
+                        total:  $scope.price, //$scope.price
                         currency: 'USD'
                     }
                 }
