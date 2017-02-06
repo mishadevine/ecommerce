@@ -51,8 +51,8 @@ body {
 .games button.add {
   background-color: #89aee1;
   border-color: #89aee1;
-  margin-top: 250px;
-  margin-left: -210px;
+  /*margin-top: 250px;
+  margin-left: -210px;*/
 }
 .games button.add:hover {
   background-color: #9effb8;

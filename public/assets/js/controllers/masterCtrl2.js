@@ -1,5 +1,5 @@
 angular.module ("TatianasOldies")
-  .controller("MasterCtrl", function($scope,$firebaseAuth,$firebaseArray,$firebaseObject,$http,ngCart) {
+  .controller("MasterCtrl", function($scope,$firebaseAuth,$firebaseArray,$firebaseObject) {
     var ref = firebase.database().ref() // connect to database
     var store = ref.child('store-items')
     var stoItems = $firebaseArray(store)
@@ -7,14 +7,11 @@ angular.module ("TatianasOldies")
 
     var cdRef = ref.child('store-items/cds') // calling the child element of store-items category of cds
     var cdItems = $firebaseArray(cdRef)
-    // $scope.cdItems = cdItems;
+    $scope.cdItems = cdItems;
 
     var gameRef = ref.child('store-items/games') // calling the child element of store-items category of games
     var gameItems = $firebaseArray(gameRef)
     // $scope.gameItems = gameItems;
-
-    ngCart.setTaxRate(7.5);
-    ngCart.setShipping(2.99);
 
     gameItems.$loaded()
    .then(function(){
@@ -41,29 +38,6 @@ angular.module ("TatianasOldies")
       });
 
 
-      cdItems.$loaded()
-     .then(function(){
-          angular.forEach(cdItems, function(value, key) {
-            switch (value.id) {
-              case "cd0":
-                value.image = 'assets/img/BowWowCD.png';
-                break;
-              case "cd1":
-                value.image = 'assets/img/faithhillcd.png';
-                break;
-              case "cd2":
-                  value.image = 'assets/img/dc-cd.png';
-                break;
-              default:
-
-            }
-            console.log(cdItems);
-            return $scope.cdItems = cdItems;
-          });
-        })
-        .catch(function(error){
-          console.log('Error:',error);
-        });
 
     console.log($scope);
 

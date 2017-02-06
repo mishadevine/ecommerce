@@ -1,0 +1,74 @@
+<div class="wrapper">
+
+  <div class="header">
+    <a href="/#/"><img class="logo" src="assets/img/logo_v1.png"></a>
+    <div class="nav">
+      <ul>
+        <li><a href="/">STORE</a></li>
+        <li><a href="/cart">VIEW CART</a></li>
+        <li><a href="/checkout">CHECKOUT</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="page-logo">
+    <img src="assets/img/store_logo.png">
+  </div>
+
+  <div class="store-items">
+    <div ng-repeat="game in gameItems">
+       <form class="games" ng-click="signInUser()" id="{{game.id}}">
+         <img class="nin-games" ng-src="{{game.image}}">
+           <div class="gameInfo">
+             <span><p name="title" class="title">{{game.title}}</p></span>
+             <span><p name="deets" class="deets">{{game.details}}</p></span>
+             <span><p name="price" class="price">{{game.price}}</p></span>
+           </div>
+           <button class="add" ng-click="addCartItem(game)">Add to Cart</button>
+      </form>
+    </div>
+
+    <div ng-repeat="cd in cdItems">
+       <form class="cd" ng-click="signInUser()" id="{{cd.id}}">
+         <img class="nin-games" ng-src="{{cd.image}}">
+           <div class="cdnfo">
+             <span><p name="title" class="title">{{cd.title}}</p></span>
+             <span><p name="deets" class="deets">{{cd.artist}}</p></span>
+             <span><p name="price" class="price">{{cd.price}}</p></span>
+           </div>
+           <button class="add" ng-click="addCartItem(cd)">Add to Cart</button>
+      </form>
+    </div>
+
+    <!-- <form class="cds" ng-click="">
+      <img src="assets/img/faithhillcd.png">
+      <div class="cdInfo">
+        <span><p class="title">{{cdItems[1].title}}</p></span>
+        <span><p class="artist">{{cdItems[1].artist}}</p></span>
+        <span><p class="price">{{cdItems[1].price}}</p></span>
+      </div>
+      <form class="button" target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+        <input type="hidden" name="cmd" value="_s-xclick">
+        <input type="hidden" name="hosted_button_id" value="VFVAZYNZGEF84">
+        <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_cart_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+        <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+      </form>
+    </form>
+
+    <form class="cds">
+      <img src="assets/img/dc-cd.png">
+      <div class="cdInfo">
+        <span><p class="title">{{cdItems[2].title}}</p></span>
+        <span><p class="artist">{{cdItems[2].artist}}</p></span>
+        <span><p class="price">{{cdItems[2].price}}</p></span>
+      </div>
+      <form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+        <input type="hidden" name="cmd" value="_s-xclick">
+        <input type="hidden" name="hosted_button_id" value="VFVAZYNZGEF84">
+        <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_cart_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+        <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+      </form>
+    </form> -->
+  </div>
+
+</div> <!-- end of wrapper -->

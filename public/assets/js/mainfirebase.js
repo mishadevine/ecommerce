@@ -1,4 +1,4 @@
-angular.module ("TatianasOldies", ["ngRoute","firebase"])
+angular.module ("TatianasOldies", ["ngRoute","firebase","ngCart","paypal-button"])
     .config(function () {
       var config = {
         apiKey: "AIzaSyCog54WPstrB9z2c2bfFxRhEB1112GuFAQ",

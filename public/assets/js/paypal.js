@@ -17,7 +17,7 @@
                 transactions: [
                     {
                         amount: {
-                            total:  '0.02',
+                            total:  '0.02', //$scope.price
                             currency: 'USD'
                         }
                     }
