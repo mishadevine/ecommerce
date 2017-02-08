@@ -22,9 +22,9 @@
          <form class="games" ng-click="signInUser()" id="{{game.id}}">
            <img class="nin-games" ng-src="{{game.image}}">
              <div class="gameInfo">
-               <span><p name="title" class="title" ng-model="title">{{game.title}}</p></span>
-               <span><p name="deets" class="deets" ng-model="details">{{game.details}}</p></span>
-               <span><p name="price" class="price" ng-model="price">${{game.price}}</p></span>
+               <span><p name="title" class="title" ng-model="store.title">{{game.title}}</p></span>
+               <span><p name="deets" class="deets" ng-model="store.details">{{game.details}}</p></span>
+               <span><p name="price" class="price" ng-model="store.price">${{game.price}}</p></span>
              </div>
              <!-- <button class="add" ng-click="addCartItem(game)">Add to Cart</button> -->
              <ngcart-addtocart id="{{ game.id }}" name="{{ game.title }}" price="{{ game.price }}" quantity="1" quantity-max="1">Add To Cart</ngcart-addtocart>
@@ -109,7 +109,7 @@
 
             <td>{{ item.getName() }}</td>
             <td>{{ item.getQuantity() | number }}</td>
-            <td>{{ item.getPrice() | currency }}</td>
+            <td>{{ item.getPrice() | currency}}</td>
             <td>{{ item.getTotal() | currency }}</td>
         </tr>
         </tbody>
@@ -118,10 +118,10 @@
 
 </script>
 
-<script type="text/ng-template" id="template/ngCart/addtocart.html"><div ng-hide="attrs.id">
+<script type="text/ng-template" id="template/ngCart/addtocart.html">
+  <div ng-hide="attrs.id">
     <a class="btn btn-lg btn-primary" ng-disabled="true" ng-transclude></a>
-
-</div>
+  </div>
 <div ng-show="attrs.id">
     <div>
         <span ng-show="quantityMax">
@@ -139,7 +139,7 @@
 </script>
 
 
-
+</div>
 
 
 </div> <!-- end of wrapper -->

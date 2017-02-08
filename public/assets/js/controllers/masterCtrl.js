@@ -93,27 +93,25 @@ angular.module ("TatianasOldies")
           var users = $firebaseObject(usersRef)
           $scope.users = users; // calling the users database
 
-          users.userInformation = { userID: user.uid,title: $scope.title, details: $scope.details, price: $scope.price }
-          // users.userInformation = { userID: user.uid }
+          // users.userInformation = { userID: user.uid,title: $scope.gameItems[0].title, details: $scope.gameItems[0].details, price: $scope.gameItems[0].price }
+        //   users.userInformation = { userID: user.uid }
+         //
+        //   users.$save().then(function(usersRef) {
+        //    console.log("user id saved into database as: " + user.uid);
+        //  })
 
-          users.$save().then(function(usersRef) {
-           console.log("user id saved into database as: " + user.uid);
-         })
 
-
-
-         // Add to database
-          // $scope.addMovie = function() {
-          //   $scope.movies.$add($scope.newMovie).then(function(usersRef) {
-          //     $scope.newMovie = {};
-          //     console.log("added movie");
-          //   });
-          // }
 
         } else {
           console.log("user is signed out")
         }
       });  // end of onAuthStateChanged function
+      // Add to database
+
+         users.$add($scope.store).then(function(usersRef) {
+           console.log("added item to users database");
+         });
+
     } //end of signInUser function
 
     // Add cart item to database
