@@ -7,14 +7,16 @@ angular.module ("TatianasOldies")
 
     var cdRef = ref.child('store-items/cds') // calling the child element of store-items category of cds
     var cdItems = $firebaseArray(cdRef)
-    // $scope.cdItems = cdItems;
 
     var gameRef = ref.child('store-items/games') // calling the child element of store-items category of games
     var gameItems = $firebaseArray(gameRef)
-    // $scope.gameItems = gameItems;
+
+    // var usersRef = ref.child('users/') // calling the child element of users
+    // var users = $firebaseObject(usersRef)
+    // $scope.users = users;
 
     ngCart.setTaxRate(7.5);
-    ngCart.setShipping(2.99);
+    ngCart.setShipping(0);
 
     gameItems.$loaded()
    .then(function(){
@@ -32,7 +34,6 @@ angular.module ("TatianasOldies")
             default:
 
           }
-          console.log(gameItems);
           return $scope.gameItems = gameItems;
         });
       })
@@ -57,7 +58,6 @@ angular.module ("TatianasOldies")
               default:
 
             }
-            console.log(cdItems);
             return $scope.cdItems = cdItems;
           });
         })
@@ -65,60 +65,66 @@ angular.module ("TatianasOldies")
           console.log('Error:',error);
         });
 
-    console.log($scope);
-
     var items;
 
-    $scope.signInUser = function () { // assigning an auth property
-      firebase.auth().signInAnonymously().catch(function(error) { // signing in the user without having them physically sign in
-        // Handle Errors here.
-        var errorCode = error.code;
-        var errorMessage = error.message;
-
-        if (errorCode === 'auth/operation-not-allowed') {
-          alert('You must enable Anonymous auth in the Firebase Console.');
-        } else {
-          console.error(error);
-        }
-      }); //end of signInAnonymously function
-
-      firebase.auth().onAuthStateChanged(function(user) { // begging of onAuthStateChanged function
-        if (user) {
-          // User is signed in.
-          var isAnonymous = user.isAnonymous; // asking if user is anonymous or not
-          var uid = user.uid;
-          console.log("user is signed in as " + user.uid + "and is " + user.isAnonymous)
-
-          var usersRef = ref.child('users/' + user.uid) // calling the child element of users
-          var users = $firebaseObject(usersRef)
-          $scope.users = users; // calling the users database
-
-          // users.userInformation = { userID: user.uid,title: $scope.gameItems[0].title, details: $scope.gameItems[0].details, price: $scope.gameItems[0].price }
-        //   users.userInformation = { userID: user.uid }
-         //
-        //   users.$save().then(function(usersRef) {
-        //    console.log("user id saved into database as: " + user.uid);
-        //  })
-
-
-
-        } else {
-          console.log("user is signed out")
-        }
-      });  // end of onAuthStateChanged function
-      // Add to database
-
-         users.$add($scope.store).then(function(usersRef) {
-           console.log("added item to users database");
-         });
-
-    } //end of signInUser function
-
-    // Add cart item to database
-    //  $scope.addCartItem = function(item) {
-    //    console.log(item);
-     //
-    //  }
-     // Remove from database
+//     $scope.signInUser = function () { // assigning an auth property
+//       firebase.auth().signInAnonymously().catch(function(error) { // signing in the user without having them physically sign in
+//         // Handle Errors here.
+//         var errorCode = error.code;
+//         var errorMessage = error.message;
+//
+//         if (errorCode === 'auth/operation-not-allowed') {
+//           alert('You must enable Anonymous auth in the Firebase Console.');
+//         } else {
+//           console.error(error);
+//         }
+//       }); //end of signInAnonymously function
+//
+//       firebase.auth().onAuthStateChanged(function(user) { // begging of onAuthStateChanged function
+//         if (user) {
+//           // User is signed in.
+//           var isAnonymous = user.isAnonymous; // asking if user is anonymous or not
+//           var uid = user.uid;
+//           console.log("user is signed in as " + user.uid + "and is " + user.isAnonymous)
+//
+//           var usersRef = ref.child('users/' + user.uid) // calling the child element of users
+//           var users = $firebaseObject(usersRef)
+//           $scope.users = users; // calling the users database
+//
+//           // users.userInformation = { userID: user.uid,title: $scope.gameItems[0].title, details: $scope.gameItems[0].details, price: $scope.gameItems[0].price }
+//           users.userInformation = { userID: user.uid }
+//
+//           users.$save().then(function(usersRef) {
+//            console.log("user id saved into database as: " + user.uid);
+//          })
+//
+//         // Add to database
+//
+//           //  users.$add($scope.store).then(function(usersRef) {
+//           //    console.log("added item to users database");
+//           //  });
+//
+//
+//
+//         } else {
+//           console.log("user is signed out")
+//         }
+//       });  // end of onAuthStateChanged function
+//     } //end of signInUser function
+// // $scope.users = users;
+//     // Add to database
+//     // $scope.addNewItem = function() {
+//     //   $scope.users.$add($scope.store).then(function(ref) {
+//     //     // $scope.newMovie = {};
+//     //     console.log("added item");
+//     //   });
+//     // }
+//
+//     // Add cart item to database
+//     //  $scope.addCartItem = function(item) {
+//     //    console.log(item);
+//      //
+//     //  }
+//      // Remove from database
 
   }) // end of controller

@@ -147,16 +147,16 @@ angular.module('ngCart', ['ngCart.directives'])
         };
 
         this.empty = function () {
-            
+
             $rootScope.$broadcast('ngCart:change', {});
             this.$cart.items = [];
             localStorage.removeItem('cart');
         };
-        
+
         this.isEmpty = function () {
-            
+
             return (this.$cart.items.length > 0 ? false : true);
-            
+
         };
 
         this.toObject = function() {
@@ -356,7 +356,7 @@ angular.module('ngCart.directives', ['ngCart.fulfilment'])
             transclude: true,
             templateUrl: function(element, attrs) {
                 if ( typeof attrs.templateUrl == 'undefined' ) {
-                    return 'template/ngCart/addtocart.html';
+                    return 'parts/ng-cart/addtocart.html';
                 } else {
                     return attrs.templateUrl;
                 }
@@ -390,7 +390,7 @@ angular.module('ngCart.directives', ['ngCart.fulfilment'])
             scope: {},
             templateUrl: function(element, attrs) {
                 if ( typeof attrs.templateUrl == 'undefined' ) {
-                    return 'template/ngCart/cart.html';
+                    return 'parts/ng-cart/cart.html';
                 } else {
                     return attrs.templateUrl;
                 }
@@ -409,7 +409,7 @@ angular.module('ngCart.directives', ['ngCart.fulfilment'])
             transclude: true,
             templateUrl: function(element, attrs) {
                 if ( typeof attrs.templateUrl == 'undefined' ) {
-                    return 'template/ngCart/summary.html';
+                    return 'parts/ng-cart/summary.html';
                 } else {
                     return attrs.templateUrl;
                 }
@@ -423,6 +423,7 @@ angular.module('ngCart.directives', ['ngCart.fulfilment'])
             controller : ('CartController', ['$rootScope', '$scope', 'ngCart', 'fulfilmentProvider', function($rootScope, $scope, ngCart, fulfilmentProvider) {
                 $scope.ngCart = ngCart;
 
+                $scope.cartItems = ngCart.getItems();
                 $scope.checkout = function () {
                     fulfilmentProvider.setService($scope.service);
                     fulfilmentProvider.setSettings($scope.settings);
@@ -437,6 +438,7 @@ angular.module('ngCart.directives', ['ngCart.fulfilment'])
                             });
                         });
                 }
+                 console.log($scope.ngCart);
             }]),
             scope: {
                 service:'@',
@@ -445,7 +447,7 @@ angular.module('ngCart.directives', ['ngCart.fulfilment'])
             transclude: true,
             templateUrl: function(element, attrs) {
                 if ( typeof attrs.templateUrl == 'undefined' ) {
-                    return 'template/ngCart/checkout.html';
+                    return 'parts/ng-cart/checkout.html';
                 } else {
                     return attrs.templateUrl;
                 }
