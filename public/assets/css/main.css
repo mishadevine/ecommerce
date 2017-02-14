@@ -48,14 +48,15 @@ body {
 .store-items {
   text-align: center;
 }
-.games button.add {
-  background-color: #89aee1;
-  border-color: #89aee1;
-  /*margin-top: 250px;
-  margin-left: -210px;*/
+.ngShow {
+  /*margin-bottom: 100px;*/
 }
-.games button.add:hover {
-  background-color: #9effb8;
+.showDiv2{
+  /*background-color: blue;*/
+}
+.show {
+  /*background-color: pink;*/
+  /*margin-bottom: -50px;*/
 }
                       /***** games *****/
 form.games {
@@ -91,29 +92,26 @@ form.cds {
  margin-bottom: 70px;
 }
 .cds {
- margin-left: 60px;
+ margin-left: 190px;
  float: left;
+}
+#allCDs {
+  margin-top: 590px;
+  margin-left: -50px;
 }
 .cds img {
   width: 200px;
   height: 200px;
-  margin-left: 70px;
-}
-.cds button.add {
-  background-color: #89aee1;
-  border-color: #89aee1;
-  margin-top: 250px;
-  margin-left: -190px;
-}
-.cds button.add:hover {
-  background-color: #9effb8;
+  margin-left: 45px;
 }
 .cdInfo {
   margin-top: 30px;
+  margin-left: 70px;
 }
-.cds span p{
+
+/*.cds span p{
   margin-left: 100px;
-}
+}*/
 .cds p.title{
   font-size: 21px;
 }

@@ -14,131 +14,39 @@
     <img src="assets/img/store_logo.png">
   </div>
 
-
-    <div class="store-items">
-      <!-- Games -->
-      <div ng-repeat="game in gameItems">
-         <form class="games" ng-click="signInUser()" id="{{game.id}}">
-           <img class="nin-games" ng-src="{{game.image}}">
-             <div class="gameInfo">
-               <span><p name="title" class="title" ng-model="store.title">{{game.title}}</p></span>
-               <span><p name="deets" class="deets" ng-model="store.details">{{game.details}}</p></span>
-               <span><p name="price" class="price" ng-model="store.price">${{game.price}}</p></span>
-             </div>
-             <!-- <button class="add" ng-click="addCartItem(game)">Add to Cart</button> -->
-             <ngcart-addtocart id="{{ game.id }}" name="{{ game.title }}" price="{{ game.price }}" quantity="1" quantity-max="1">Add To Cart</ngcart-addtocart>
-        </form>
-      </div>
-
-      <!-- CDS -->
-      <div ng-repeat="cd in cdItems">
-         <form class="cds" ng-click="signInUser()" id="{{cd.id}}">
-           <img ng-src="{{cd.image}}">
-             <div class="cdInfo">
-               <span><p name="title" class="title">{{cd.title}}</p></span>
-               <span><p name="artist" class="artist">{{cd.artist}}</p></span>
-               <span><p name="price" class="price">${{cd.price}}</p></span>
-             </div>
-             <!-- <button class="add" ng-click="addCartItem(cd)">Add to Cart</button> -->
-             <ngcart-addtocart id="{{ cd.id }}" name="{{ cd.title }}" price="{{ cd.price }}" quantity="1" quantity-max="1">Add To Cart</ngcart-addtocart>
-
-        </form>
-      </div>
-
+  <!-- all store items -->
+  <div class="store-items"> <!-- begging of store items div -->
+    <!-- Games -->
+    <div ng-repeat="game in gameItems">
+       <form class="games" ng-click="signInUser()" id="{{game.id}}">
+         <img class="nin-games" ng-src="{{game.image}}">
+           <div class="gameInfo">
+             <span><p name="title" class="title" ng-model="store.title">{{game.title}}</p></span>
+             <span><p name="deets" class="deets" ng-model="store.details">{{game.details}}</p></span>
+             <span><p name="price" class="price" ng-model="store.price">${{game.price}}</p></span>
+           </div>
+           <div class="ngShow">
+             <ngcart-addtocart id="{{ game.id }}" name="{{ game.title }}" price="{{ game.price }}" quantity="1" quantity-max="1" class="add2cart-btn">Add To Cart</ngcart-addtocart>
+           </div>
+      </form>
     </div>
+  </div> <!-- end of store items div -->
 
-      <!--  TEMPALATES -->
-<!--  TEMPALATES -->
-<!--  TEMPALATES -->
-
-<script type="text/ng-template" id="template/ngCart/summary.html"><div class="row">
-
-    <div class="col-md-6">{{ ngCart.getTotalItems() }}
-        <ng-pluralize count="ngCart.getTotalItems()" when="{1: 'item', 'other':'items'}"></ng-pluralize>
-        <br />{{ ngCart.totalCost() | currency }}
+  <div class="store-items" id="allCDs">
+    <!-- CDS -->
+    <div ng-repeat="cd in cdItems">
+       <form class="cds" ng-click="signInUser()" id="{{cd.id}}">
+         <img class="cd" ng-src="{{cd.image}}">
+           <div class="cdInfo">
+             <span><p name="title" class="title">{{cd.title}}</p></span>
+             <span><p name="artist" class="artist">{{cd.artist}}</p></span>
+             <span><p name="price" class="price">${{cd.price}}</p></span>
+           </div>
+           <div class="ngShow">
+             <ngcart-addtocart id="{{ cd.id }}" name="{{ cd.title }}" price="{{ cd.price }}" quantity="1" quantity-max="1" class="add2cart-btn">Add To Cart</ngcart-addtocart>
+          </div>
+      </form>
     </div>
-</div>
-</script>
-
-
-<script type="text/ng-template" id="template/ngCart/cart.html">
-<div class="alert alert-warning" role="alert" ng-show="ngCart.getTotalItems() === 0">
-    Your cart is empty
-</div>
-
-<div class="table-responsive col-lg-12" ng-show="ngCart.getTotalItems() > 0">
-
-    <table class="table table-striped ngCart cart">
-
-        <thead>
-        <tr>
-            <th></th>
-            <th></th>
-            <th>Quantity</th>
-            <th>Amount</th>
-            <th>Total</th>
-        </tr>
-        </thead>
-        <tfoot>
-        <tr ng-show="ngCart.getTax()">
-            <td></td>
-            <td></td>
-            <td></td>
-            <td>Tax ({{ ngCart.getTaxRate() }}%):</td>
-            <td>{{ ngCart.getTax() | currency }}</td>
-        </tr>
-        <tr ng-show="ngCart.getShipping()">
-            <td></td>
-            <td></td>
-            <td></td>
-            <td>Shipping:</td>
-            <td>{{ ngCart.getShipping() | currency }}</td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td>Total:</td>
-            <td>{{ ngCart.totalCost() | currency }}</td>
-        </tr>
-        </tfoot>
-        <tbody>
-        <tr ng-repeat="item in ngCart.getCart().items track by $index">
-            <td><span ng-click="ngCart.removeItemById(item.getId())" class="glyphicon glyphicon-remove"></span></td>
-
-            <td>{{ item.getName() }}</td>
-            <td>{{ item.getQuantity() | number }}</td>
-            <td>{{ item.getPrice() | currency}}</td>
-            <td>{{ item.getTotal() | currency }}</td>
-        </tr>
-        </tbody>
-    </table>
-</div>
-
-</script>
-
-<script type="text/ng-template" id="template/ngCart/addtocart.html">
-  <div ng-hide="attrs.id">
-    <a class="btn btn-lg btn-primary" ng-disabled="true" ng-transclude></a>
   </div>
-<div ng-show="attrs.id">
-    <div>
-        <span ng-show="quantityMax">
-            <select name="quantity" id="quantity" ng-model="q"
-                    ng-options=" v for v in qtyOpt"></select>
-        </span>
-        <a class="btn btn-sm btn-primary"
-           ng-click="ngCart.addItem(id, name, price, q, data)"
-           ng-transclude></a>
-    </div>
-    <mark  ng-show="inCart()">
-        This item is in your cart. <a ng-click="ngCart.removeItemById(id)" style="cursor: pointer;">Remove</a>
-    </mark>
-</div>
-</script>
-
-
-</div>
-
 
 </div> <!-- end of wrapper -->
