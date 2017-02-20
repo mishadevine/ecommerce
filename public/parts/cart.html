@@ -18,13 +18,14 @@
 
   <div class="cartContainer"> <!-- beginning of cartContainer -->
     <ngcart-cart></ngcart-cart>
-    <!-- <button type="submit" ng-click="goToCheckout()" class="btn btn-lg toCheckout">Ready To Checkout</button> -->
-    <div style="text-align: center">
-      <ngcart-checkout
-        service="paypal"
-        settings=  "{paypal: { business:'mdevine-facilitator@fullsail.edu', currency_code: 'USD' } }">
-      </ngcart-checkout>
-    </div>
+    <a href="/">Add Items</a>
   </div> <!-- end of cartContainer -->
+
+  <div style="text-align: center" class="checkout-btn">
+    <ngcart-checkout
+      service="paypal"
+      settings=  "{paypal: { business:'mdevine-facilitator@fullsail.edu', currency_code: 'USD' } }">
+    </ngcart-checkout>
+  </div>
 
 </div> <!-- end of wrapper -->

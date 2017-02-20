@@ -3,11 +3,13 @@
 </div>
 <div ng-show="attrs.id">
     <div class="showDiv2">
-        <a class="btn btn-sm btn-primary"
+        <a class="btn btn-sm btn-primary addBtn"
            ng-click="ngCart.addItem(id, name, price, q, data)"
            ng-transclude></a>
     </div>
-    <mark  ng-show="inCart()" class="show">
-        This item is in your cart. <a ng-click="ngCart.removeItemById(id)" style="cursor: pointer;">Remove</a>
+  </br>
+    <mark ng-show="inCart()" class="show">
+        This item is in your cart. <a ng-click="ngCart.removeItemById(id)" style="cursor: pointer;">Remove</a> </br>
+        Go to <a href="/cart">cart</a>
     </mark>
 </div>

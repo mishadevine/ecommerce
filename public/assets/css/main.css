@@ -48,17 +48,21 @@ body {
 .store-items {
   text-align: center;
 }
-.ngShow {
-  /*margin-bottom: 100px;*/
+.addBtn {
+  background-color: #89aee1;
+  border-color: #89aee1;
+  color: black;
 }
-.showDiv2{
-  /*background-color: blue;*/
+.addBtn:hover {
+  background-color: #e9f259;
+  border-color: #e9f259;
+  color: #d46ce7;
 }
-.show {
-  /*background-color: pink;*/
-  /*margin-bottom: -50px;*/
-}
+
                       /***** games *****/
+.ngShow {
+  margin-left: 30px;
+}
 form.games {
   margin-bottom: 70px;
 }
@@ -108,23 +112,29 @@ form.cds {
   margin-top: 30px;
   margin-left: 70px;
 }
-
-/*.cds span p{
-  margin-left: 100px;
-}*/
 .cds p.title{
   font-size: 21px;
+  margin-left: -20px;
 }
 .cds p.artist{
   font-size: 18px;
+  margin-left: -20px;
 }
 .cds p.price{
   font-size: 18px;
+  margin-left: -20px;
 }
 
 
 
                 /*********** cart ***********/
+.show{
+  background-color: #9effb8;
+  border-radius: 5px;
+}
+.empty-cart{
+  font-size: 20px;
+}
 .cart-logo {
   width: 37%;
   margin: auto;
@@ -140,31 +150,9 @@ form.cds {
   height: 400px;
   margin-bottom: 100px;
 }
-.cartContainer form ul li {
-  list-style-type: none;
-}
-.removeLink {
-  margin-left: 700px;
-  margin-top: -30px;
-}
-.checkout {
-  margin-top: 100px;
-   width: 20%;
-   margin-left: 350px;
-}
-.cartPrice {
-  margin-left: 550px;
-  margin-top: -70px;
-}
-.cartContainer button {
-  background-color: #89aee1;
-  width: 20%;
-  margin-top: 100px;
-  margin-left: 390px;
-}
-.cartContainer button:hover {
-  background-color: #d46ce7;
-  color: #e9f259;
+.cartContainer a {
+  font-size: 17px;
+  margin-left: 490px;
 }
                 /*********** checkout ***********/
 .checkout-logo {
@@ -174,9 +162,10 @@ form.cds {
   margin-top: 50px;
   margin-bottom: 50px;
 }
-
-.success {
-  text-align: center;
+.checkout-btn {
+  margin-left: 700px;
+  margin-top: -80px;
+  float: left;
 }
 .checkoutContainer {
   background-color: #7cf4d3;

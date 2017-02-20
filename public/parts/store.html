@@ -25,7 +25,7 @@
              <span><p name="deets" class="deets" ng-model="store.details">{{game.details}}</p></span>
              <span><p name="price" class="price" ng-model="store.price">${{game.price}}</p></span>
            </div>
-           <div class="ngShow">
+           <div>
              <ngcart-addtocart id="{{ game.id }}" name="{{ game.title }}" price="{{ game.price }}" quantity="1" quantity-max="1" class="add2cart-btn">Add To Cart</ngcart-addtocart>
            </div>
       </form>
